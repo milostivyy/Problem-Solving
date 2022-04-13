@@ -3,12 +3,17 @@ public:
     int mySqrt(int x) {
         if(x==0 || x==1)
             return x;
-        long long i=0;
-     for(i=1;i*i <=x ;i++)
-     {
-         
-     }
-    return i-1;
+        int i=1;
+        while(i*1ll*i<=x)
+        {
+            i++;
+        }
+        if(i*1ll*i==x)
+        {
+            return i;
+        }
+        return i-1;
+        
     
         
     }
