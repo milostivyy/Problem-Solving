@@ -1,1 +1,1 @@
-​
+​We will find gcd of all frequencies storre of each number then if gcd is 1 this means there doesnot exist any x in which group contains x cards.othere wise we return smallest x which can divide grp into x cards which is jsut gcd
