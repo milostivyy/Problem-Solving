@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> countPoints(vector<vector<int>>& points, vector<vector<int>>& queries) {
         vector<int>v;
+        
         for(int i=0;i<queries.size();i++)
         {
             int h=queries[i][0];
