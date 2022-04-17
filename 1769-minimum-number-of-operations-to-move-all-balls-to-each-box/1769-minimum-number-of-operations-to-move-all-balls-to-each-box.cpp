@@ -1,23 +1,37 @@
 class Solution {
 public:
     vector<int> minOperations(string boxes) {
-        vector<int>pos;
-        vector<int>res;
+        int left=0,right=0;
         int n=boxes.length();
+        int distance=0;
         for(int i=0;i<n;i++)
         {
-            if(boxes[i]=='1') pos.push_back(i);
-        }
-        for(int i=0;i<n;i++)
-        {int sum=0;
-            for(int j=0;j<pos.size();j++)
-            {
-                sum+=abs(pos[j]-i);
+            if(boxes[i]=='1')
+            {   distance+=i;
+                if(i==0)
+                {
+                    left+=1;
+                    
+                }
+                else
+                {
+                    right+=1;
+                }
             }
-         res.push_back(sum);
         }
-        return res;
-        
+        vector<int>result;
+        result.push_back(distance);
+        for(int i=1;i<n;i++)
+        {
+            result.push_back(result[i-1]+left-right);
+            if(boxes[i]=='1')
+            {
+                left+=1;
+                right-=1;
+            }
+            
+        }
+        return result;
         
     }
 };
